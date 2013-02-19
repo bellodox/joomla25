@@ -9,4 +9,4 @@ Joomla2.5
 
 - Russian translations
 
-- Multilanguage site (2 RU/EN)
+- Multilanguage site (RU/EN)
