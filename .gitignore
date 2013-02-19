@@ -1,0 +1,52 @@
+# joomla
+/administrator/.htaccess
+/.htaccess
+/configuration.php
+/defines.php
+#
+# /administrator/backups/
+# /administrator/cache/
+# /cache/
+# /images/
+# /logs/
+# /tmp/
+
+# tmp, archives
+*.log
+*.tmp
+*.zip
+*.tar
+*.tgz
+*.tar.gz
+*.rar
+
+# media files
+*.mp3
+*.ogg
+*.flac
+*.ogv
+*.avi
+*.mp4
+*.flv
+*.mov
+
+# docs
+*.pdf
+*.ppt
+*.doc
+*.rtf
+*.xls
+*.docx
+*.xlsx
+
+# custom
+/_backup/
+/.idea/
+/nbproject/
+/download/
+/files/
+/plesk-stat/
+/changes-filelist.txt
+/environment
+/*.sh
+/*.sql

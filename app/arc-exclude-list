@@ -1,0 +1,6 @@
+nbproject
+src.git
+.git
+tmp
+fabfile.py
+*.pyc
