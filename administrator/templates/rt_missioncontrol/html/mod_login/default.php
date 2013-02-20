@@ -37,7 +37,7 @@ endif; ?>
 		<input name="passwd" id="modlgn_passwd" type="password" placeholder="<?php echo JTEXT::_('MC_PASSWORD'); ?>" class="inputbox" size="15" />
 
 		<span class="button" onclick="login.submit();">
-			<?php echo JText::_( 'Login' ); ?>
+			<?php echo JText::_( 'MC_LOGIN' ); ?>
 		</span>
 
 	</div>
