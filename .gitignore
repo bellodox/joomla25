@@ -2,7 +2,6 @@
 /administrator/.htaccess
 /.htaccess
 /configuration.php
-/defines.php
 #
 # /administrator/backups/
 # /administrator/cache/
