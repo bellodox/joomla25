@@ -12,5 +12,6 @@
 	</files>
 	<languages>
 		<language tag="en-GB">en-GB.plg_editors_ckeditor.ini</language>
+		<language tag="en-GB">ru-RU.plg_editors_ckeditor.ini</language>
 	</languages>
 </extension>
