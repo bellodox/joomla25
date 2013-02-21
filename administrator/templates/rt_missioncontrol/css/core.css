@@ -164,3 +164,9 @@ iframe#jform_articletext_ifr{width:100%!important}.config-option-list input.pick
 #mc-footer .copyright {
 	display: none;
 }
+
+.modal-button,
+.readmore a
+{
+	margin-top:6px;	
+}
