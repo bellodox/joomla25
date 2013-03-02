@@ -1,0 +1,16 @@
+
+/* fix foxcontact styles */
+
+.fox-copyright {
+	display: none;
+}
+
+.foxfield button {
+	float:right;
+	margin-right: 44% !important;
+}
+
+.foxtext {
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 12px !important;
+}
