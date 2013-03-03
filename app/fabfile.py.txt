@@ -1,0 +1,21 @@
+from fabric.api import *
+
+# database config
+
+env.DB_NAME = 'joomla25'
+env.DB_USER = 'joomla25u'
+env.DB_PASSWORD = '25_joomla_25'
+
+# deploy config
+
+env.DEPLOY_METHOD = 'NONE'
+env.DEPLOY_USER = 'user'
+env.DEPLOY_PASSWORD = ''
+env.DEPLOY_PATH = '/var/www/vhosts/site1.net/httpdocs'
+env.DEPLOY_SERVER = 'server1.net'
+env.DEPLOY_PORT = '22'
+
+import db
+import host
+import dev
+import php
