@@ -1,6 +1,7 @@
 from fabric.api import *
 import sys, os, os.path, datetime, shutil, platform, subprocess, re
 import db
+import host
 
 # for windows add path to GIT
 git_path = "C:\\Program Files (x86)\\Git\\bin"
@@ -50,8 +51,8 @@ def deploy():
 	
 	if env.DEPLOY_METHOD == 'FTP':
 		os.chdir('app/tmp/changes')		
-		local('lftp -e "mirror -R -v -p --parallel=3 ./ ' + env.DEPLOY_PATH + ' && exit" '
-			+ env.DEPLOY_USER + ':' + env.DEPLOY_PASSWORD + '@' + env.DEPLOY_SERVER)
+		local('lftp -e "mirror -R -v -p --parallel=3 ./ ' + env.DEPLOY_PATH + ' && exit" "'
+			+ env.DEPLOY_USER + ':' + env.DEPLOY_PASSWORD + '@' + env.DEPLOY_SERVER + '"')
 	#elif env.DEPLOY_METHOD == 'SCP':
 	#	print 'by SCP'
 		#cd ./_backup/tmpchanges
@@ -94,3 +95,33 @@ def deploy_production():
 	print 'deploy to production...'
 	with cd(env.DEPLOY_PATH + '/app'):	
 		run('fab deploy')
+
+@task
+def init():
+	db.create()
+	db.adduser()
+	db.imp('db/db.sql')
+
+	os.chdir('..')
+	hostname = os.path.basename(os.getcwd())
+	os.chdir('..')
+	host.add(hostname)
+	os.chdir(hostname + '/app')
+
+@task
+def joomla_init():
+	init()
+	os.chdir('..')
+
+	src = 'configuration.php'
+	dest = 'configuration.php.tmp'	
+	with open(dest, 'w') as fout:
+		with open(src) as f:
+			for line in f:
+				line = line.replace("'joomla25u'", "'" + env.DB_USER + "'")
+				line = line.replace("'25_joomla_25'", "'" + env.DB_PASSWORD + "'")
+				line = line.replace("'joomla25'", "'" + env.DB_NAME + "'")
+				line = line.replace('/home/user/web/applications/joomla25/logs', os.getcwd() + '/logs')
+				line = line.replace('/home/user/web/applications/joomla25/tmp', os.getcwd() + '/tmp')					
+				fout.write(line)
+	os.rename(dest, src)

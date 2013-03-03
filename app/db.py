@@ -1,5 +1,8 @@
 from fabric.api import *
 
+ROOT_USER = 'root'
+ROOT_PASSWORD = 'root'
+
 @task
 def login():
 	local('mysql --user=' + env.DB_USER + ' --password=' + env.DB_PASSWORD + ' ' + env.DB_NAME)
@@ -24,7 +27,11 @@ def pull():
 		imp(dest)
 
 @task
-def sql_user():
-	sql = "GRANT ALL PRIVILEGES ON " + env.DB_NAME + ".* TO " + env.DB_USER + "@localhost IDENTIFIED BY '" + env.DB_PASSWORD + "' WITH GRANT OPTION;"
-	print sql
-	#local('echo ' + sql + ' | mysql --user=' + env.DB_USER + ' --password=' + env.DB_PASSWORD + ' ' + env.DB_NAME)
+def adduser():
+	sql = 'GRANT ALL PRIVILEGES ON ' + env.DB_NAME + '.* TO ' + env.DB_USER + '@localhost IDENTIFIED BY "' + env.DB_PASSWORD + '" WITH GRANT OPTION;'
+	local("echo '" + sql + "' | mysql --user=" + ROOT_USER + " --password=" + ROOT_PASSWORD)
+
+@task
+def create():
+	sql = 'CREATE DATABASE IF NOT EXISTS `' + env.DB_NAME + '` CHARACTER SET utf8 COLLATE utf8_general_ci;'
+	local("echo '" + sql + "' | mysql --user=" + ROOT_USER + " --password=" + ROOT_PASSWORD)
