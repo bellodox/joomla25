@@ -113,8 +113,8 @@ def joomla_init():
 	init()
 	os.chdir('..')
 
-	src = 'configuration.php'
-	dest = 'configuration.php.tmp'	
+	src = 'configuration.php.txt'
+	dest = 'configuration.php'	
 	with open(dest, 'w') as fout:
 		with open(src) as f:
 			for line in f:
@@ -124,4 +124,3 @@ def joomla_init():
 				line = line.replace('/home/user/web/applications/joomla25/logs', os.getcwd() + '/logs')
 				line = line.replace('/home/user/web/applications/joomla25/tmp', os.getcwd() + '/tmp')					
 				fout.write(line)
-	os.rename(dest, src)
