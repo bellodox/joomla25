@@ -10,11 +10,11 @@ defined('_JEXEC') or die;
 /* The following line loads the MooTools JavaScript Library */
 JHtml::_('behavior.framework', true);
 
+$document	= JFactory::getDocument();
+$document->setGenerator('GNU Emacs');
+
 /* The following line gets the application object for things like displaying the site name */
 $app = JFactory::getApplication();
-
-$document	= JFactory::getDocument();
-$document->setGenerator('Emacs');
 ?>
 <?php echo '<?'; ?>xml version="1.0" encoding="<?php echo $this->_charset ?>"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
