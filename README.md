@@ -3,16 +3,19 @@ Joomla2.5
 
 - Preinstalled Joomla 2.5
 
-- Customized **MissionControl** Joomla Administrator Template
-
-- CKEditor latest version
-
 - Russian translations
 
 - Multiple language site (RU/EN)
 
-- "Main menu" module
 
-- "Contacts" module
+Customized extensions:
 
-- "News" page and module
+- **MissionControl** administrator template
+
+- **CKEditor** latest version
+
+- "Main menu"
+
+- "Contacts"
+
+- "News"
