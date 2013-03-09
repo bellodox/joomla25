@@ -10,3 +10,9 @@ Joomla2.5
 - Russian translations
 
 - Multilanguage site (RU/EN)
+
+- Main menu module
+
+- Contacts module
+
+- News page and module
