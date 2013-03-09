@@ -11,8 +11,8 @@ Joomla2.5
 
 - Multilanguage site (RU/EN)
 
-- Main menu module
+- "Main menu" module
 
-- Contacts module
+- "Contacts" module
 
-- News page and module
+- "News" page and module
