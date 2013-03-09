@@ -7,12 +7,9 @@ Joomla2.5
 
 - Multiple language site (RU/EN)
 
+- "MissionControl" administrator template
 
-Customized extensions:
-
-- **MissionControl** administrator template
-
-- **CKEditor** latest version
+- "CKEditor" latest version
 
 - "Main menu"
 
