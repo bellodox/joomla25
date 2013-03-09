@@ -5,11 +5,11 @@ Joomla2.5
 
 - Customized **MissionControl** Joomla Administrator Template
 
-- CKEditor Latest version
+- CKEditor latest version
 
 - Russian translations
 
-- Multilanguage site (RU/EN)
+- Multiple language site (RU/EN)
 
 - "Main menu" module
 
