@@ -7,14 +7,19 @@
 
 defined('_JEXEC') or die;
 
-/* The following line loads the MooTools JavaScript Library */
 JHtml::_('behavior.framework', true);
 
 $document	= JFactory::getDocument();
 $document->setGenerator('GNU Emacs');
 
-/* The following line gets the application object for things like displaying the site name */
 $app = JFactory::getApplication();
+
+// путь к шаблону
+$templatePath = $this->baseurl . '/templates/' . $this->template;
+
+// получить значение текущего языка
+$lang = JRequest::getVar('lang', 'ru');
+
 ?>
 <?php echo '<?'; ?>xml version="1.0" encoding="<?php echo $this->_charset ?>"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -42,8 +47,34 @@ $app = JFactory::getApplication();
 		<!-- The following line loads the template JavaScript file located in the template folder. It's blank by default. -->
 		<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/template.js"></script>
 
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/custom.css" type="text/css" />
-	
+		<!-- custom assets -->
+		<link rel="stylesheet" href="<?= $templatePath ?>/css/custom.css" type="text/css" />
+		<script>
+			var SiteApp = (function() {
+				"use strict";
+
+				var app = {};
+				app.language = '<?= $lang ?>';
+
+				return app;
+			})();
+		</script>
+		<script src="<?= $templatePath ?>/js/jquery.js"></script>
+		<script src="<?= $templatePath ?>/js/init.js"></script>
+
+		<?php if ($this->countModules('mainslider')) { ?>
+			<script src="<?= $templatePath ?>/slidesjs/js/jquery.slides.min.js"></script>
+			<link rel="stylesheet" href="<?= $templatePath ?>/css/mainslider.css" type="text/css" />
+			<script>
+				jQuery(function ($) {
+					$('#slides').slidesjs({
+			      width: 640,
+			      height: 200			      
+			    });
+				});
+			</script>
+		<?php } ?>
+		
 	</head>
 	<body>
 		<div class="container">
@@ -74,6 +105,9 @@ $app = JFactory::getApplication();
 				<jdoc:include type="message" />
 				<jdoc:include type="component" />
 				<jdoc:include type="modules" name="contactscontent" />
+				<?php if ($this->countModules('mainslider')) { ?>
+					<jdoc:include type="modules" name="mainslider" />					
+				<?php } ?>
 
 				<hr />
 
@@ -95,6 +129,9 @@ $app = JFactory::getApplication();
 				</div>
 			<?php endif; ?>
 			</div>
+
+			<div style="clear:both;"></div>
+
 			<?php if($this->countModules('atomic-sidebar') || $this->countModules('position-7')
 			|| $this->countModules('position-4') || $this->countModules('position-5')
 			|| $this->countModules('position-3') || $this->countModules('position-6') || $this->countModules('position-8'))
