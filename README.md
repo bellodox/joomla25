@@ -16,3 +16,5 @@ Joomla2.5
 - "Contacts"
 
 - "News"
+
+- "Main slider"
