@@ -17,4 +17,4 @@ Joomla2.5
 
 - "News"
 
-- "Main slider"
+- "Frontpage slider"
