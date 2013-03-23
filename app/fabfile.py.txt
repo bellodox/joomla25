@@ -15,7 +15,7 @@ env.DEPLOY_PATH = '/var/www/vhosts/site1.net/httpdocs'
 env.DEPLOY_SERVER = 'server1.net'
 env.DEPLOY_PORT = '22'
 
-import db
-import host
-import dev
-import php
+from sitetools import db
+from sitetools import host
+from sitetools import dev
+from sitetools import php
