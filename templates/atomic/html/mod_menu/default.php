@@ -1,22 +1,12 @@
 <?php
-/**
- * @package		Joomla.Site
- * @subpackage	Templates.atomic
- * @copyright	Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- */
-
-// No direct access.
 defined('_JEXEC') or die;
 
-// Note. It is important to remove spaces between elements.
 ?>
-<!-- The class on the root UL tag was changed to match the Blueprint nav style -->
-<ul class="joomla-nav<?php echo $params->get('class_sfx');?>"<?php
+<ul class="nav<?php echo $params->get('class_sfx');?>"<?php
 	$tag = '';
-	if ($params->get('tag_id')!=NULL) {
-		$tag = $params->get('tag_id').'';
-		echo ' id="'.$tag.'"';
+	if ($params->get('tag_id') != NULL) {
+		$tag = $params->get('tag_id') . '';
+		echo ' id="' . $tag . '"';
 	}
 ?>>
 <?php
