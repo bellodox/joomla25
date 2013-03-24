@@ -1,0 +1,3 @@
+[submodule "app/sitetools"]
+	path = app/sitetools
+	url = https://github.com/rivetweb/sitetools.git
