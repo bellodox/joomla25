@@ -63,7 +63,7 @@ $lang = JRequest::getVar('lang', 'ru');
 		<jdoc:include type="modules" name="atomic-topquote" />
 	</header>
 
-	<?php if ($this->countModules('mainslider')) { ?>		
+	<?php if ($this->countModules('mainslider')) { ?>
 		<div id="promo">
 			<jdoc:include type="modules" name="mainslider" />		
 		</div>
@@ -78,11 +78,21 @@ $lang = JRequest::getVar('lang', 'ru');
 	<div class="wrapper">
 
 		<div class="row">
+			<?php if ($this->countModules('mainslider')) { ?>
 			<div class="third">
-				<jdoc:include type="message" />
-				<jdoc:include type="component" />				
-				<jdoc:include type="modules" name="contactscontent" />
+			<?php } else { ?>
+			<article class="threequarter">
+			<?php } ?>
+
+			<jdoc:include type="message" />
+			<jdoc:include type="component" />				
+			<jdoc:include type="modules" name="contactscontent" />
+
+			<?php if ($this->countModules('mainslider')) { ?>
 			</div>
+			<?php } else { ?>
+			</article>
+			<?php } ?>
 			
 			<?php if ($this->countModules('mainnews')) { ?>
 				<div class="twothird">

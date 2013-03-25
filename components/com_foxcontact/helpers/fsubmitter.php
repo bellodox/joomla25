@@ -61,14 +61,14 @@
 			{
 				case 1:
 					// Submit input
-					$result .= '<input class="foxbutton" type="submit" style="margin-' . $GLOBALS["right"] . ':32px;" name="' . $this->GetId() . '" value="' . $this->Params->get("submittext") . '"/>' . PHP_EOL;
+					$result .= '<input class="foxbutton btn" type="submit" style="margin-' . $GLOBALS["right"] . ':32px;" name="' . $this->GetId() . '" value="' . $this->Params->get("submittext") . '"/>' . PHP_EOL;
 					break;
 
 				default:
 					// Submit button
 					$icon = $this->Params->get("submiticon");
 					// Can't use "value" attribute: http://www.w3schools.com/tags/att_button_value.asp
-					$result .= '<button class="foxbutton" type="submit" style="margin-' . $GLOBALS["right"] . ':32px;" name="' . $this->GetId() . '">' . PHP_EOL .
+					$result .= '<button class="foxbutton btn" type="submit" style="margin-' . $GLOBALS["right"] . ':32px;" name="' . $this->GetId() . '">' . PHP_EOL .
 					'<span ';
 					if ($icon != "-1") $result .= 'style="background: url(' . JUri::base(true) . '/media/' . $GLOBALS["com_name"] . '/images/submit/' . $icon . ') no-repeat scroll ' . $GLOBALS["left"] . ' top transparent; padding-' . $GLOBALS["left"] . ':20px;" ';
 					$result .= '>' . PHP_EOL .
@@ -83,14 +83,14 @@
 				{
 					case 1:
 						// input
-						$result .= '<input class="foxbutton" type="reset" onClick="ResetFoxControls();" value="' . $this->Params->get("resettext") . '">' . PHP_EOL;
+						$result .= '<input class="foxbutton btn" type="reset" onClick="ResetFoxControls();" value="' . $this->Params->get("resettext") . '">' . PHP_EOL;
 						break;
 
 					default:
 						// button
 
 						$reseticon = $this->Params->get("reseticon");
-						$result .= '<button class="foxbutton" type="reset" onClick="ResetFoxControls();">' . PHP_EOL .
+						$result .= '<button class="foxbutton btn" type="reset" onClick="ResetFoxControls();">' . PHP_EOL .
 						'<span ';
 						if ($reseticon != "-1") $result .= 'style="background: url(' . JUri::base(true) . '/media/' . $GLOBALS["com_name"] . '/images/reset/' . $reseticon . ') no-repeat scroll ' . $GLOBALS["left"] . ' top transparent; padding-' . $GLOBALS["left"] . ':20px;" ';
 						$result .= '>' . PHP_EOL .

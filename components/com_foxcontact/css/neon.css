@@ -179,7 +179,7 @@ html[dir="rtl"] .fox-dropdown-container {
 
 button.foxbutton {
 	cursor:pointer;
-	padding:3px 5px 3px 5px;
+	/*padding:3px 5px 3px 5px;*/
 	/*	margin-left: 160px;*/
 }
 
